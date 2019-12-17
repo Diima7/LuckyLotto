@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html>
+
+<head>
+    <title>LuckyLotto</title>
+    <meta name="description" content="Lotto">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <nav id="overlay">
+        <img src="{% static 'icon.png' %}" class="close-btn" id="close-menu">
+      <ul>
+        <li ><a href="{% url 'webs:home' %}">Home</a><span>Hier gelangst du zur Startseite</span></li>
+        <li ><a href="{% url 'webs:login' %}">Login</a><span>Hier kannst du dich einloggen</span></li>
+        <li ><a href="{% url 'webs:register' %}">Registrieren</a><span>Bist du neu bei uns?<br>Registriere dich jetzt</span></li>
+        <li ><a href="{% url 'webs:about' %}">Über uns</a><span>Willst du etwas über uns erfahen?</span></li>
+      </ul>
+    </nav>
+
+    <header>
+        <a href="#" class="logo">LUCKY LOTTO</a>
+        <img src="https://img.icons8.com/ios-glyphs/60/000000/menu.png" class="menu-btn" id="open-menu">
+    </header>
+
+    <section class="loginbox " id="hide">
+        <img src="{% static 'login-logo.png' %}" class="login-logo">
+        
+        <form action='{% url 'webs:login' %}' method="post">
+          {% csrf_token %}
+          <h2>Login</h2>
+          {{ form }}
+          <button class="sb" type="submit" value="log">Einloggen</button>
+        </form>
+        <a class="help" href="">Hast du dein Passwort vergessen?</a>
+        <br>
+        <br>
+        <a class="help" href="{% url 'webs:register' %}">Registriere dich jetzt</a>
+  
+    </section>
+  <footer>© 2019 Lucky Lotto - All rights reserved.</footer>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>

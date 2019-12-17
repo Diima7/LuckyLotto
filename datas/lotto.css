@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+html, body {
+  background: black;
+  font-family: 'Montserrat';
+  margin: 0 auto;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 2em;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+section {
+  background: white;
+}
+
+h3 {
+  font-size: 4em;
+  margin: 1em auto;
+  width: 70%;
+  border-top: 5px solid black;
+}
+
+nav {
+  position: absolute;
+  display: none;
+  background: white;
+  padding: 2em;
+  width: calc(100% - 4em);
+  height: calc(100vh - 4em);
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+nav ul li a {
+  color: black;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.close-btn {
+  width: 24px;
+  opacity: 0;
+  float: right;
+  cursor: pointer;
+  animation: show-x 1s 1.8s forwards;
+}
+
+.menu-btn {
+  width: 24px;
+  float: right;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 20% auto 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  width: 100%;
+}
+
+.show-menu {
+  display: block;
+  animation: slide-menu 1s ease-in forwards;
+}
+
+.hide {
+  opacity: 0;
+  transition: all 0.75s ease;
+  visibility: hidden;
+}
+
+li {
+  opacity: 0;
+}
+
+li:nth-of-type(1) {
+  animation: menu-item-anim .6s forwards 1s ease-in-out;
+}
+
+li:nth-of-type(2) {
+  animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+}
+
+li:nth-of-type(3) {
+  animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+}
+
+li:nth-of-type(4) {
+  animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+}
+
+@keyframes slide-menu {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes show-x {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-item-anim {
+  from {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes type {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 26ch;
+    ;
+  }
+}
+
+
+
+
+.js-number {
+  width: 40px;
+  margin-top: 20px;
+  background: white;
+  
+  border:none;
+  border-bottom: 2px solid black;
+  margin-left: 50px;
+}
+input{
+  color:black;
+  font-weight:bold;
+}
+
+
+.input_text {
+  outline: none;
+  border:none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  text-align: left;
+  font-size: 100%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.sb {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  background: black;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.sb:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.Game {
+ 
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+#ctn {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+}
+.group{
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 130px;
+}
+
+#ctn aside {
+  -webkit-flex-basis: 20%;
+  flex-basis: 30%;
+}
+
+#ctn section {
+  -webkit-flex-basis: 60%;
+  flex-basis: 65%;;
+}
+
+.js-number {
+  margin-left: 30px;
+  padding-left: 10px;
+
+}
+
+.container {
+  width: 100%;
+  margin-top: 2em;
+  margin-right: auto;
+  margin-left: auto;
+  height: 730px;
+  background: white;
+}
+
+.info {
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin-top: 40px;
+  margin-left: 20px;
+  border-right: 2px solid black;
+}
+
+
+#txt{
+  font-weight:bold;
+  font-size: 1em;
+}
+#btn{
+  width: 50%;
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 30%;
+  border-radius: 20px;
+  background: black;
+  color: white;
+  font-size: 14px;
+  font-family: 'Montserrat';
+  outline: none;
+
+}
+#lotto_show{
+  width:100%;
+  height:5em;
+  border:2px solid green;
+}
+span{
+  display: block;
+  color: black;
+  font-size: 1em;
+  margin-top: 20px;
+}

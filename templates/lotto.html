@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static from staticfiles %} <!--Dateien aus Static laden-->
+<html>
+
+<head>
+    <title>LuckyLotto</title> <!--Title der Seite-->
+    <meta name="description" content="Lotto"> <!--Meta -->
+  <link rel="stylesheet" href="{% static 'lotto.css' %}"> <!--verlinkung zur Style.css-->
+</head>
+
+
+<body>
+    <nav id="overlay">  <!-- Navigation (noch versteckt)-->
+        <img src="{% static 'close_.png' %}" class="close-btn" id="close-menu">  <!-- button zum schließen des Nav-->
+          <form action="{% url 'webs:logout' %}" method="post"> <!-- form für das logout icon-->
+              {% csrf_token %} <!-- Sicherheits-Tocken -->
+              <a href="{% url 'webs:logout' %}"><img src="{% static 'logout.png' %}" class="logout-icon"></a> <!-- logout Icon-->
+          </form>
+        <ul>
+          <li ><a href="{% url 'webs:home' %}">Home</a><span>Hier gelangst du zur Startseite</span></li> <!-- Nav Home-->
+          <li ><a href="{% url 'webs:lotto' %}">Login</a><span>Hier kannst du dich einloggen</span></li> <!-- Nav Login-->
+          <li ><a href="{% url 'webs:register' %}">Registrieren</a><span>Bist du neu bei uns?<br>Registriere dich jetzt</span></li> <!-- Nav Register-->
+          <li ><a href="{% url 'webs:about' %}">Über uns</a><span>Willst du etwas über uns erfahen?</span></li> <!-- Nav About-->
+
+        </ul>
+    </nav>
+
+    <header>
+        <a href="{% url 'webs:home' %}" class="logo">LUCKY LOTTO</a> <!-- Logo schriftzug-->
+
+        <img src="https://img.icons8.com/windows/32/000000/menu-rounded.png" class="menu-btn" id="open-menu"><!-- button zum Öffnen des Nav-->
+    </header>
+
+    <div class="container" id="ctn"> <!-- Main-Container -->
+        <aside class="info"> <!-- Aside für die Info Anzeige -->
+          <form id='personal'> <!-- Form -->
+            <h1>Spieler Info</h1> <!-- Überschrift -->
+            <p class="lb">Name</p>  <!-- Label -->
+            <input value="{{ user_name }}" class="input_text" type=text name="username" disabled></input> <!-- username Anzeige -->
+            <p class="lb">Identitätsnummer</P>  <!-- Label -->
+            <input value="{{ user_id }}" class="input_text" type=text name="ID" disabled></input> <!-- ID Anzeige -->
+            <p class="lb">Registriert seit</P> <!-- Label -->
+            <input value="{{ register_date }}" class="input_text" type=text name="date" disabled></input> <!-- Registrierungsdatum Anzeige -->
+          </form>
+        </aside>
+
+        <section class="Game">
+            <div class="group"> <!-- Aside für die Spiele Anzeige -->
+              <h2>Lotto</h2>  <!-- Überschrift -->
+              <input value="{{ lotto_nums }}" text="text" id="lotto_show" disabled></input>  <!-- Lottozahl anzeige -->
+            </div>
+            <span id="txt">Gebe die Lotto zahlen ein:</span>   <!-- Lottozahl anzeige -->
+            <form id='num' method="post" action="{% url 'webs:lotto' %}"> <!-- form für die Eingabe der zahlen -->
+              {% csrf_token %}
+              <input type="text" class="js-number" name="lt1" maxlength="2"> <!-- 1. Input max(2zahlen) -->
+              <input type="text" class="js-number" name="lt2" maxlength="2">
+              <input type="text" class="js-number" name="lt3" maxlength="2">
+              <input type="text" class="js-number" name="lt4" maxlength="2">
+              <input type="text" class="js-number" name="lt5" maxlength="2">
+              <input type="text" class="js-number" name="lt6" maxlength="2"><!-- 6. Input max(2zahlen) -->
+              <button type="submit" class="btn" id='hide'>Spielen</button> <!-- Button Auslosen -->
+            </form>
+        </section>
+      </div>
+
+    <footer id="hide">
+      © 2019 Lucky Lotto - All rights reserved. <!-- footer -->
+    </footer>
+  <script src="{% static 'main.js' %}"></script>  <!-- Verlinkung zu Javascript-->
+</body>
+
+</html>

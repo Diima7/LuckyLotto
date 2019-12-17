@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+html, body{
+    background: white ;
+    font-family:'Montserrat';
+    margin: 0 auto;
+    padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+header{
+  padding: 2em;
+}
+p{
+  margin-top:150px;
+}
+.logo{
+  color: black;
+  font-weight:bold;
+
+}
+
+section{
+  padding: 4em;
+}
+h1{
+  font-size: 4em;
+  margin: 1em auto;
+  width: 70%;
+  border-top:5px solid black;
+
+}
+h3{
+  font-size: 3em;
+  margin: 1em auto;
+  width: 850px;
+  overflow:hidden;
+  white-space: nowrap;
+  
+  animation: type 3s steps(30);
+  border-right: 2px solid black;
+  
+}
+nav{
+  position: absolute;
+  display: none;
+  background: black;
+  padding: 2em;
+  width: calc(100% - 4em);
+  height: calc(100vh - 4em);
+  transform: scaleX(0);
+  transform-origin: right;
+}
+nav ul li a{
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+span{
+  display: block;
+  color: gray;
+  font-size: 1em;
+  margin-top: 20px;
+}
+.close-btn{
+  width: 24px;
+  opacity: 0;
+  float: right;
+  cursor: pointer;
+  animation: show-x 1s 1.8s forwards;
+}
+.menu-btn{
+  width: 24px;
+  float: right;
+  cursor: pointer;
+
+}
+ul{
+  list-style-type: none;
+  margin: 20% auto 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  width: 100%;
+
+}
+
+.show-menu{
+  display: block;
+  animation: slide-menu 1s ease-in forwards;
+}
+.hide{ 
+  opacity: 0;
+  transition: all 0.75s ease;
+  visibility: hidden;
+}
+li{
+  opacity: 0;
+}
+li:nth-of-type(1){
+  animation: menu-item-anim .6s forwards 1s ease-in-out;
+}
+li:nth-of-type(2){
+  animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+}
+li:nth-of-type(3){
+  animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+}
+li:nth-of-type(4){
+  animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+}
+@keyframes slide-menu{
+  from{
+    transform: scaleX(0);
+  }
+  to{
+    transform: scaleX(1);
+  }
+}
+
+
+@keyframes show-x{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes menu-item-anim{
+  from{
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes type {
+  from{
+    width:0ch;
+  }
+  to{
+    width: 26ch;;
+  }
+}
+#btn{
+  width: 400px;
+  height: 50px;
+  margin: 100px 400px;
+  border-radius: 20px;
+  background: black;
+  color: white;
+  font-size: 20px;
+  font-family: 'Montserrat';
+  outline: none;
+}
+#btn:hover{
+  cursor: pointer;
+  color: rgb(255, 228, 106);
+}
+.loginbox{
+  width: 370px;
+  height: 420px;
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  background: white;
+  transform: translate(-58%,-50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  
+}
+.login-logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-left: 100px;
+  position: absolute;
+  top: -30px;
+  
+}
+h2{
+  margin:0
+  padding: 0;
+  text-align: center;
+  font-size: 2em;
+}
+.loginbox p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.loginbox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginbox input[type="text"], input[type="password"]{
+
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+}
+.sb
+{
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  background: black;
+  color: white;
+  margin-bottom: 20px;
+}
+.sb:hover
+{
+  cursor: pointer;
+  background: white;
+  color: black;
+  border: 2px solid black;
+}
+.help {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  line-height: 10px;
+ 
+}
+.help:hover{
+  color:lightsalmon;
+}
+
+.txt{
+
+  margin: 50px;
+  text-align: center;
+}
+
+footer{
+  text-align: center;
+  margin-right:60px;
+  margin-top: 15%;
+}
+section a {
+  text-decoration: none;
+  width:100%;
+  color:white;
+
+}
+section a:hover{
+  color:lightsalmon;
+}

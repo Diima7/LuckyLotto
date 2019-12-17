@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+html, body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  background: white;
+  font-family: 'Montserrat';
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 2em;
+}
+
+.logo {
+  color: black;
+  font-weight: bold;
+}
+
+section {
+  padding: 2em;
+  flex: 1;
+}
+
+h1 {
+  font-size: 4em;
+  margin: 1em auto;
+  width: 70%;
+  border-top: 5px solid black;
+}
+
+h4 {
+  font-size: 2em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  margin-top: 10%;
+}
+
+.des {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  height: 100px;
+  letter-spacing: 2px;
+  margin-left: 200px;
+}
+
+span li {
+  float: left;
+  margin-right: 20px;
+}
+
+h3 {
+  font-size: 3em;
+  margin: 1em auto;
+  width: 830px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2px solid black;
+  animation: type 3s steps(30);
+}
+
+nav {
+  position: absolute;
+  display: none;
+  background: black;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+span {
+  display: block;
+  color: gray;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+.close-btn {
+  width: 24px;
+  margin: 40px 40px;
+  opacity: 0;
+  float: right;
+  cursor: pointer;
+  animation: show-x 1s 1.8s forwards;
+}
+
+.menu-btn {
+  width: 24px;
+  float: right;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  margin: 20% auto 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  width: 100%;
+}
+
+.show-menu {
+  display: block;
+  animation: slide-menu 1s ease-in forwards;
+}
+
+.hide {
+  opacity: 0;
+  transition: all 0.75s ease;
+  visibility: hidden;
+}
+
+li {
+  opacity: 0;
+}
+
+li:nth-of-type(1) {
+  animation: menu-item-anim .6s forwards 1s ease-in-out;
+}
+
+li:nth-of-type(2) {
+  animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+}
+
+li:nth-of-type(3) {
+  animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+}
+
+li:nth-of-type(4) {
+  animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+}
+
+@keyframes slide-menu {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes show-x {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-item-anim {
+  from {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes type {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 26ch;
+    ;
+  }
+}
+
+.btn {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 100px;
+  text-align: center;
+  background: transparent;
+  border: 1px solid black;
+  padding: 14px 50px;
+  color: black;
+  font-family: 'Montserrat';
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: .6s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #009B77;
+  width: 30px;
+  height: 100%;
+  left: 30%;
+  top: 0;
+  opacity: 0;
+  filter: blur(30px);
+  transform: translate(-100) scaleX(-15deg)
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: #009B77;
+}
+
+.button-div {
+  margin: 0 auto;
+  width: 50%;
+  height: 100px;
+}
+
+.loginbox {
+  top: 45%;
+  left: 50%;
+  position: absolute;
+  background: white;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+.login-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-left: 100px;
+  position: absolute;
+  top: -30px;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 1.5em;
+}
+
+.loginbox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.loginbox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"] {
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+}
+
+.sb {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  background: black;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.sb:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.help {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.help:hover {
+  color: lightsalmon;
+}
+
+.txt {
+  margin: 50px;
+  text-align: center;
+}
+
+footer {
+  flex:none;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 750px;
+}
+section{
+  flex: 1 0 auto;
+}
+section a {
+  text-decoration: none;
+  width: 100%;
+  color: white;
+}
+
+section a:hover {
+  color: lightsalmon;
+}
+
+.helptext {
+  display: none;
+}
+
+.errorlist li {
+  width: 320px;
+  letter-spacing: 2px;
+}
+
+.errorlist {
+  padding: 0;
+  margin: 10px auto;
+}
+
+.check-text {
+  font-size: 12px;
+}
+
+.regular-checkbox {
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+#about-footer{
+  flex:none;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 340px;
+}
